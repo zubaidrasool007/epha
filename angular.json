@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "epha"
+    }
+  },
+  "defaultProject": "epha",
+  "cli": {
+    "analytics": false
+  }
 }
