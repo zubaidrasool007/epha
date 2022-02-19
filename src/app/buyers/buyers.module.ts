@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BuyersComponent } from './buyers/buyers.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [BuyersComponent],
   imports: [
     CommonModule
   ]
