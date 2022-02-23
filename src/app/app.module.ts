@@ -21,7 +21,7 @@ import { PersonListComponent } from './person-list/person-list.component';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
     FormsModule,
     StoreModule.forRoot({
       person: personReducer
