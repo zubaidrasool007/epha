@@ -5,23 +5,16 @@ import { createReducer, on, Action } from '@ngrx/store';
 export const initialState: Person[] = [];
 
 function removePerson(state: Person[], payload: Person) {
-    state.forEach((p, index) => {
-        if (p.Id === payload.Id) {
-            state.splice(index, 1);
-        }
-    });
-    return state;
+    return [...state.filter(x => x.Id !== payload.Id)];
 }
 
 function addPerson(state: Person[], payload: Person) {
-    console.log({payload});
     return [...state, payload];
 }
 
 const reducer = createReducer(
     initialState,
     on(AddPerson, (state, payload) => {
-        console.log({AddPerson});
         return addPerson(state, payload);
     }),
     on(RemovePerson, (state, payload) => removePerson(state, payload)),

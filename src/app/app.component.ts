@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
-// 1a. Import Store
 import { Store } from '@ngrx/store';
-// 1b. Import App State
 import { AppState } from './store/person.state';
-// 1c. Import Person object
 import { Person } from './models/person.model';
-// 1d. Import Actions
 import * as PersonActions from './store/actions/person.action';
 import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,14 +16,15 @@ export class AppComponent {
   list: boolean = false;
 
   constructor(private store: Store<AppState>) {
-    this.person = new Person(0, 'abc');
+    this.person = new Person(null, '');
   }
 
   addPerson() {
     this.store.dispatch(PersonActions.AddPerson(this.person));
+    this.clearPerson();
   }
 
   clearPerson() {
-    this.person = new Person(0, '');
+    this.person = new Person(null, '');
   }
 }

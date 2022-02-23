@@ -13,7 +13,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PersonListComponent } from './person-list/person-list.component';
 
-
 @NgModule({
   declarations: [
     PersonListComponent,
@@ -23,11 +22,8 @@ import { PersonListComponent } from './person-list/person-list.component';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    StoreModule.forRoot({
-      person: personReducer
-    }),
-    AppRoutingModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({ persons: personReducer }),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

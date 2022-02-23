@@ -13,7 +13,7 @@ import * as PersonActions from '../store/actions/person.action';
     styleUrls: ['./person-list.component.scss']
 })
 export class PersonListComponent implements OnInit {
-    persons: Person[];
+    persons: any[];
 
     constructor(private store: Store<AppState>) {
         store.select('persons').subscribe(state => {

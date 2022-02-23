@@ -1,8 +1,8 @@
 import { createAction, props } from '@ngrx/store';
 import { Person } from '../../models/person.model';
 
-const ADD_PERSON = '[PERSON] Add';
-const REMOVE_PERSON = '[PERSON] Remove';
+export const ADD_PERSON = '[PERSON] Add';
+export const REMOVE_PERSON = '[PERSON] Remove';
 
 export const AddPerson = createAction(ADD_PERSON, props<Person>());
 
