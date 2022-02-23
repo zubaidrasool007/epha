@@ -8,7 +8,11 @@ import { personReducer } from './store/reducers/person.reducer';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { PersonListComponent } from './person-list/person-list.component';
+
 
 @NgModule({
   declarations: [
@@ -17,6 +21,7 @@ import { PersonListComponent } from './person-list/person-list.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule
     FormsModule,
     StoreModule.forRoot({
       person: personReducer
