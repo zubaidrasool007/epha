@@ -1,2 +1,39 @@
+<div>
+  <button (click)="list=true;">Show List</button>
+  <button (click)="list=false;">Show Form</button>
+</div>
+<div *ngIf="!list" class="container">
+  <table class="table table-bordered table-striped">
+    <tr>
+      <td>
+        Id
+      </td>
+      <td>
+        <input type="text" class="form-control" name="id" [(ngModel)]="person.Id">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Name
+      </td>
+      <td>
+        <input type="text" class="form-control" name="personName" [(ngModel)]="person.Name">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="button" value="New" class="btn btn-default" (click)="clearPerson()">
+      </td>
+      <td>
+        <input type="button" value="Save" class="btn btn-success" (click)="addPerson()">
+      </td>
+    </tr>
+  </table>
+</div>
 
-<router-outlet></router-outlet>
+
+<div *ngIf="list">
+  <app-person-list></app-person-list>
+</div>
+
+<!-- <router-outlet></router-outlet> --!>
